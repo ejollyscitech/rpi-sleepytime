@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 import subprocess
 
+# ===============
+# GetActiveUserIP:
+# returns the IP address of the active user running the script
+# ===============
 def get_active_user_ip():
     cmd = "who -u -m | awk '{print $NF}' | sed -e 's/[()]//g'"
     process = subprocess.Popen(cmd, stdout=subprocess.PIPE, shell=True)
